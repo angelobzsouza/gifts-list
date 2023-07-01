@@ -1,6 +1,6 @@
 const express = require("express");
 const { Pool } = require("pg");
-const config = require("./config");
+require("dotenv").config();
 
 const app = express();
 app.use(express.json());
@@ -8,7 +8,13 @@ app.use(express.json());
 const port = 3000;
 
 // Database connection configuration
-const pool = new Pool(config.database);
+const pool = new Pool({
+  user: "your_user",
+  host: "your_host",
+  database: "your_database",
+  password: "your_password",
+  port: 5432,
+});
 
 // Endpoint to return the list of gifts
 app.get("/api/gifts", async (req, res) => {
