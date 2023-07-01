@@ -9,10 +9,10 @@ const port = 3000;
 
 // Database connection configuration
 const pool = new Pool({
-  user: "your_user",
-  host: "your_host",
-  database: "your_database",
-  password: "your_password",
+  user: process.env.POSTGRES_USER,
+  host: process.env.POSTGRES_HOST,
+  database: process.env.POSTGRES_DATABASE,
+  password: process.env.POSTGRES_PASSWORD,
   port: 5432,
 });
 
