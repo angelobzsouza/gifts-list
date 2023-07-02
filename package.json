@@ -8,6 +8,7 @@
     "start": "node index.js"
   },
   "devDependencies": {
+    "cors": "^2.8.5",
     "dotenv": "^16.3.1",
     "eslint": "^8.44.0",
     "eslint-config-airbnb-base": "^15.0.0",

@@ -1,11 +1,13 @@
 const express = require("express");
 const { Pool } = require("pg");
 require("dotenv").config();
+const cors = require("cors");
 
 const app = express();
 app.use(express.json());
+app.use(cors());
 
-const port = 3000;
+const port = 3001;
 
 // Database connection configuration
 const pool = new Pool({
@@ -15,8 +17,8 @@ const pool = new Pool({
   password: process.env.POSTGRES_PASSWORD,
   port: 5432,
   ssl: {
-    rejectUnauthorized: false
-  }
+    rejectUnauthorized: false,
+  },
 });
 
 // Endpoint to return the list of gifts
