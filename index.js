@@ -24,7 +24,7 @@ const pool = new Pool({
 // Endpoint to return the list of gifts
 app.get("/api/gifts", async (req, res) => {
   try {
-    const query = "SELECT * FROM gifts";
+    const query = "SELECT * FROM gifts ORDER BY price";
     const { rows } = await pool.query(query);
 
     res.json(rows);
